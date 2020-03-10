@@ -15,7 +15,7 @@ public class AssignmentFour
 		shapes.add(p1);
 		shapes.add(c1);
 		shapes.add(r1);
-		shapes.add(s1);
+		//shapes.add(s1);
 		
 		for(Shape s : shapes)
 		{
@@ -24,7 +24,6 @@ public class AssignmentFour
 			sop("Area: " + s.getArea());
 			sop("Perimeter: " + s.getPerimeter());
 		}
-		
 		sop("");
 		try
 		{
@@ -111,6 +110,7 @@ public class AssignmentFour
 		doScale(c1, 6);
 		doScale(r1, 7);
 		doScale(s1,12);
+
 	}
 
 	static private void doScale(Shape s, int scale)

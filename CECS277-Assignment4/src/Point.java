@@ -13,7 +13,7 @@ public class Point extends Shape
 	
 	public Point(Point p)
 	{
-		this("Copy of: " + p.getName(), p.getX(), p.getY());
+		this(p.getName(), p.getX(), p.getY());
 	}
 	
 	public Point(String name, int x, int y)
