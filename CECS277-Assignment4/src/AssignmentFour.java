@@ -105,6 +105,7 @@ public class AssignmentFour
 		{
 			sop("Error: " + e.toString());
 		}
+		
 		// Use Scalable Interface
 		doScale(p1, 2);
 		doScale(c1, 6);
