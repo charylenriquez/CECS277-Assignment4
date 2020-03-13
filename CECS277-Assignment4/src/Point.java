@@ -38,7 +38,7 @@ public class Point extends Shape
 	@Override
 	public double getDistance(Shape other)
 	{
-		if(!(other instanceof Point)) return 0.0;
+		if(!(other instanceof Point)) throw new InvalidDistanceComputationException("Point",other.getClass().toString());
 		else
 		{
 			Point p = (Point)other;

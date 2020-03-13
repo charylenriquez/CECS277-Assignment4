@@ -49,7 +49,7 @@ public class Circle extends Shape
 	@Override
 	public double getDistance(Shape other)
 	{
-		if(!(other instanceof Circle)) return 0.0;
+		if(!(other instanceof Circle)) throw new InvalidDistanceComputationException("Circle", other.getClass().toString());
 		else
 		{
 			Circle c = (Circle)other;
