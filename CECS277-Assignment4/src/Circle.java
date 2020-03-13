@@ -66,7 +66,7 @@ public class Circle extends Shape
 	@Override 
 	public boolean equals(Object other)
 	{
-		if(!(other instanceof Circle)) return false;
+		if(!(other instanceof Circle)) throw new InvalidComparisonException("Circle",other.getClass().toString());
 		else
 		{
 			Circle c = (Circle)other;
@@ -96,12 +96,11 @@ public class Circle extends Shape
 	}
 	
 	@Override
-	public String scale(int scaleFactor)
+	public void scale(int scaleFactor)
 	{
-		double radius = mRadius * scaleFactor;
-		Circle c = new Circle(new Name(getName()), mCenter, radius);
-		
-		return c.toString();
+		mRadius = mRadius * scaleFactor;
+		//Circle c = new Circle(new Name(getName()), mCenter, radius);	
+		//return c.toString();
 	}
 	public Point getCenter()
 	{

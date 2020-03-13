@@ -66,7 +66,7 @@ public class Point extends Shape
 	@Override
 	public boolean equals(Object other)
 	{
-		if(!(other instanceof Point)) return false;
+		if(!(other instanceof Point)) throw new InvalidComparisonException("Point",other.getClass().toString());
 		else
 		{
 			Point p = (Point)other;
@@ -97,13 +97,13 @@ public class Point extends Shape
 	}
 	
 	@Override
-	public String scale(int scaleFactor)
+	public void scale(int scaleFactor)
 	{
-		int x = mX + scaleFactor;
-		int y = mY + scaleFactor;
-		Point p = new Point(getName(), x, y);
+		mX = mX + scaleFactor;
+		mY = mY + scaleFactor;
+		//Point p = new Point(getName(), x, y);
 		
-		return p.toString();
+		//return p.toString();
 	}
 	
 	private int mX;

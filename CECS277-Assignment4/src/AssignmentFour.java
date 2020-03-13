@@ -24,6 +24,7 @@ public class AssignmentFour
 			sop("Area: " + s.getArea());
 			sop("Perimeter: " + s.getPerimeter());
 		}
+		
 		sop("");
 		try
 		{
@@ -85,7 +86,7 @@ public class AssignmentFour
 		{
 			sop("Error: " + e.toString());
 		}
-		
+		/*
 		try
 		{
 			sop("Distance r1 to r1: " + r1.getDistance(r1));
@@ -105,12 +106,12 @@ public class AssignmentFour
 		{
 			sop("Error: " + e.toString());
 		}
-		
+		*/
 		// Use Scalable Interface
 		doScale(p1, 2);
 		doScale(c1, 6);
 		doScale(r1, 7);
-		doScale(s1,12);
+		//doScale(s1,12);
 
 	}
 

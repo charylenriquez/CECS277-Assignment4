@@ -44,7 +44,7 @@ public class Rectangle extends Shape{
 	@Override
 	public double getDistance(Shape other)
 	{
-		if(!(other instanceof Rectangle)) return 0.0;
+		if(!(other instanceof Rectangle)) throw new InvalidDistanceComputationException("Rectangle", other.getClass().toString());
 		else
 		{
 			Rectangle r = (Rectangle)other;
@@ -61,24 +61,42 @@ public class Rectangle extends Shape{
 	@Override
 	public boolean equals(Object other)
 	{
-		if(!(other instanceof Rectangle)) return false;
+		if(!(other instanceof Rectangle)) throw new InvalidComparisonException("Rectangle", other.getClass().toString());
 		else
 		{
 			Rectangle r = (Rectangle)other;
-			return mCorner.equals(mCorner) && mLength == r.mLength && mWidth == r.mWidth;
+			return this.getArea() == r.getArea();
 			
 		}
 	}
-	//TODO
 	@Override
-	public int compareTo(Object arg0) {
-		return 0;
-	}
-	//TODO
-	@Override
-	public String scale(int scaleFactor)
+	public int compareTo(Object arg0) 
 	{
-		return "TODO";
+		if(!(arg0 instanceof Rectangle)) 
+		{
+			return 1; //greatest
+		}
+		else
+		{
+			Rectangle r = (Rectangle)arg0;
+			
+			int answer = mCorner.compareTo(r.mCorner);
+			if(answer != 0) return answer;
+			else
+			{
+				double areaDiff = getArea() - r.getArea();
+				if(areaDiff < 0) return -1;
+				else if(areaDiff == 0) return 0;
+				else return 1;
+			}
+				
+		}
+	}
+	@Override
+	public void scale(int scaleFactor)
+	{
+		mLength = mLength * scaleFactor;
+		mWidth = mWidth * scaleFactor;
 	}
 	public Point getCorner()
 	{

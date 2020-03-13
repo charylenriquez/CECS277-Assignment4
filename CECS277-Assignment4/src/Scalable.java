@@ -1,5 +1,5 @@
 
 public interface Scalable 
 {
-	String scale(int scalefactor);
+	void scale(int scalefactor);
 }
