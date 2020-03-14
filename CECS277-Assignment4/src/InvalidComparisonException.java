@@ -1,11 +1,11 @@
 
 public class InvalidComparisonException extends RuntimeException {
-	/*public InvalidComparisonException() {
-		super();
+	String message1, message2;
+	public InvalidComparisonException(String class1, String class2) {
+		message1 = class1;
+		message2 = class2;
 	}
-	*/
-	public InvalidComparisonException(String message1, String message2) {
-		//super();
-		System.out.println("Can't Compare class " + message1 + " with " + message2);
+	public String toString() {
+		return ("Can't Compare class " + message1 + " with " + message2);
 	}
 }

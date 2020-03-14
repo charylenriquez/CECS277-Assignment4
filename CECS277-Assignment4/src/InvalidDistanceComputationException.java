@@ -1,10 +1,11 @@
 
 public class InvalidDistanceComputationException extends RuntimeException {
-	public InvalidDistanceComputationException() {
-		super();
+	String message1, message2;
+	public InvalidDistanceComputationException(String class1, String class2) {
+		message1 = class1;
+		message2 = class2;
 	}
-	public InvalidDistanceComputationException(String message1, String message2) {
-		//super();
-		System.out.println("can't Compute Distance Between class " + message1 + " and " + message2 );
+	public String toString() {
+		return "can't Compute Distance Between class " + message1 + " and " + message2;
 	}
 }
