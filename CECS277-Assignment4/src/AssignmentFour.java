@@ -15,7 +15,7 @@ public class AssignmentFour
 		shapes.add(p1);
 		shapes.add(c1);
 		shapes.add(r1);
-		//shapes.add(s1);
+		shapes.add(s1);
 		
 		for(Shape s : shapes)
 		{
@@ -86,7 +86,7 @@ public class AssignmentFour
 		{
 			sop("Error: " + e.toString());
 		}
-		/*
+		
 		try
 		{
 			sop("Distance r1 to r1: " + r1.getDistance(r1));
@@ -106,12 +106,12 @@ public class AssignmentFour
 		{
 			sop("Error: " + e.toString());
 		}
-		*/
+		
 		// Use Scalable Interface
 		doScale(p1, 2);
 		doScale(c1, 6);
 		doScale(r1, 7);
-		//doScale(s1,12);
+		doScale(s1,12);
 
 	}
 

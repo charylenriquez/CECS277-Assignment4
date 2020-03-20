@@ -1,5 +1,5 @@
 
-public class Square{
+public class Square extends Shape{
 	private Rectangle mSquare;
 
 	public Square() 
@@ -14,6 +14,7 @@ public class Square{
 	
 	public Square(String name, int side)
 	{
+		super(name);
 		mSquare = new Rectangle(name,side,side);
 		
 	}
@@ -33,21 +34,23 @@ public class Square{
 		return mSquare.getDistance(other);
 	}
 	
+	@Override
 	public String toString()
 	{
 		return "Square: " + super.toString() + ", Corner: " + mSquare.getCorner() + ", Length: " + mSquare.getLength() + ", Width: " + mSquare.getWidth();
 	}
 	
+	@Override
 	public boolean equals(Object other)
 	{
 		return mSquare.equals(other);
 	}
-	
+	@Override
 	public int compareTo(Object arg0)
 	{
 		return mSquare.compareTo(arg0);
 	}
-	
+	@Override
 	public void scale(int scaleFactor)
 	{
 		mSquare.scale(scaleFactor);
