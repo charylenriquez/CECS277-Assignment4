@@ -37,7 +37,7 @@ public class Square extends Shape{
 	@Override
 	public String toString()
 	{
-		return "Square: " + super.toString() + ", Corner: " + mSquare.getCorner() + ", Length: " + mSquare.getLength() + ", Width: " + mSquare.getWidth();
+		return "Square: " + super.toString() + ", Side: " + mSquare.getWidth();
 	}
 	
 	@Override
