@@ -31,7 +31,15 @@ public class Square extends Shape{
 	
 	public double getDistance(Shape other)
 	{
-		return mSquare.getDistance(other);
+		//return mSquare.getDistance(other);
+		if(!(other instanceof Square)) throw new InvalidDistanceComputationException("Square", other.getClass().toString());
+		else
+		{
+			Square s = (Square)other;
+			
+			return mSquare.getCorner().getDistance(s.getCorner());
+		}
+		
 	}
 	
 	@Override
