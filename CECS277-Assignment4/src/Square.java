@@ -43,7 +43,14 @@ public class Square extends Shape{
 	@Override
 	public boolean equals(Object other)
 	{
-		return mSquare.equals(other);
+		//return mSquare.equals(other);
+		if(!(other instanceof Square)) throw new InvalidComparisonException("Square", other.getClass().toString());
+		else
+		{
+			Square s = (Square)other;
+			return this.getArea() == s.getArea();
+			
+		}
 	}
 	@Override
 	public int compareTo(Object arg0)
