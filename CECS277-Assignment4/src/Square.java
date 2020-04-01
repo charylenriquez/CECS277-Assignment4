@@ -1,7 +1,6 @@
 
 public class Square extends Shape{
-	private Rectangle mSquare;
-
+	
 	public Square() 
 	{
 		this("NoNameSquare");
@@ -16,7 +15,6 @@ public class Square extends Shape{
 	{
 		super(name);
 		mSquare = new Rectangle(name,side,side);
-		
 	}
 	
 	public double getArea()
@@ -31,15 +29,12 @@ public class Square extends Shape{
 	
 	public double getDistance(Shape other)
 	{
-		//return mSquare.getDistance(other);
 		if(!(other instanceof Square)) throw new InvalidDistanceComputationException("Square", other.getClass().toString());
 		else
 		{
 			Square s = (Square)other;
-			
-			return mSquare.getCorner().getDistance(s.getCorner());
+			return getCorner().getDistance(s.getCorner());
 		}
-		
 	}
 	
 	@Override
@@ -51,20 +46,20 @@ public class Square extends Shape{
 	@Override
 	public boolean equals(Object other)
 	{
-		//return mSquare.equals(other);
 		if(!(other instanceof Square)) throw new InvalidComparisonException("Square", other.getClass().toString());
 		else
 		{
 			Square s = (Square)other;
 			return this.getArea() == s.getArea();
-			
 		}
 	}
+	
 	@Override
 	public int compareTo(Object arg0)
 	{
 		return mSquare.compareTo(arg0);
 	}
+	
 	@Override
 	public void scale(int scaleFactor)
 	{
@@ -76,5 +71,5 @@ public class Square extends Shape{
 		return mSquare.getCorner();
 	}
 	
-	
+	private Rectangle mSquare;
 }
